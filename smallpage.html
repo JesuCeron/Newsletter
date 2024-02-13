@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="stylesmall.css">
+    <link rel="icon" href="images\favicon-32x32.png" type="image/x-icon">
+    <link href="https://fonts.google.com/specimen/Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+
+        <img class="circulito"  src="images\icon-list.svg" alt="Icono" width="37px" height="37px">
+        <h1 class="Titulo"> Thanks for subscribing! </h1>
+
+        <div class="Texto">
+            <h2>A confirmation email has beem sent to <span id="textoRecibido"></span> Please open it and click the button inside to confirm your subscription. </h2>
+            
+        </div>
+
+        <button class="Boton" onclick="Regresar()">Dismiss message</button>
+        <script >
+
+                function Regresar() {
+                
+                window.location.href = "index.html";
+                
+                }
+
+        </script>
+
+        <script>
+
+            window.onload = function() {
+                var dato = localStorage.getItem("dato");
+            
+                if (dato) {
+                document.getElementById("textoRecibido").textContent = dato + ".";
+                } else {
+                document.getElementById("textoRecibido").textContent = "No se almacenó ningún dato.";
+                }
+        }
+        
+        </script>
+        
+    </div>
+
+
+</body>
+</html>
